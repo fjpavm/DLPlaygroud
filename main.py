@@ -2,11 +2,13 @@ import keras
 from keras.utils import np_utils as numpy_utils
 from keras import backend as K
 import numpy
+
+from DataLoader import DataLoader
     
 if __name__ == '__main__':
     
-    #dataset = keras.datasets.mnist
-    dataset = keras.datasets.fashion_mnist
+    dataset = keras.datasets.mnist
+    #dataset = keras.datasets.fashion_mnist
     #dataset = keras.datasets.cifar10
     #dataset = keras.datasets.cifar100
     channels_first_format = K.image_data_format() == 'channels_first'
@@ -22,4 +24,5 @@ if __name__ == '__main__':
     train_output_categorical = numpy_utils.to_categorical(train_output)
     print(train_output[0])
     print(train_output_categorical[0])
+    
     
